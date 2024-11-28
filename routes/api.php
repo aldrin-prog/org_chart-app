@@ -13,6 +13,6 @@ use App\Http\Controllers\PositionController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+// Route::get('/api/positions/')
 Route::apiResource('positions', PositionController::class);
 

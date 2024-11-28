@@ -11,6 +11,10 @@ class PositionController extends Controller
      */
     public function index(Request $request){
         $query = Position::query();
+        if ($request->has('search')) {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+        $query->orderBy('name', "asc");
         return response()->json($query->get());
     }
 
