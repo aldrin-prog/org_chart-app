@@ -38,6 +38,9 @@ class PositionController extends Controller
     public function show(string $id)
     {
         //
+        $position=Position::find($id);
+        return response()->json($position, 200);
+
     }
 
     /**
