@@ -31,8 +31,9 @@
     php artisan serve
 
 ## How to Test the API in Postman
-## Base Url
+### Base Url
     ```bash
     http://127.0.0.1:8000/api/
 
-##
+## Headers
+### Add the following headers for all requests:
