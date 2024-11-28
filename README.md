@@ -35,5 +35,7 @@
     ```bash
     http://127.0.0.1:8000/api/
 
-## Headers
-### Add the following headers for all requests:
+## For testing the Api include this in header
+```bash
+    key Accept
+    value application/json
