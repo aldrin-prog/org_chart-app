@@ -27,7 +27,13 @@ class PositionController extends Controller
             'name' => 'required|unique:positions,name',
             'reports_to' => 'nullable|exists:positions,id',
         ]);
+        $isNull=$request->input('reports_to');
         
+        if(!$isNull){
+            $hasNull=Position::where('reports_to','=',null)->get();
+            if(count($hasNull)>0)
+                return response()->json(["message"=>"Only One Position can report to null"], 500); 
+        }       
         $position = Position::create($validated);
         return response()->json($position, 201);
     }
